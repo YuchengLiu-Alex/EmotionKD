@@ -1,1 +1,195 @@
+<!doctype html>
+<html lang="en">
 
+<!-- === Header Starts === -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>EmotionKD</title>
+    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/font.css" rel="stylesheet" type="text/css">
+    <link href="./assets/style.css" rel="stylesheet" type="text/css">
+    <script src="./assets/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/corpus.js"></script>
+
+</head>
+<!-- === Header Ends === -->
+
+<script>
+    var lang_flag = 1;
+
+
+</script>
+
+<body>
+
+    <!-- === Home Section Starts === -->
+    <div class="section">
+        <!-- === Title Starts === -->
+        <div class="header">
+            <!--        <div class="logo">-->
+            <!--            <a href="https://decisionforce.github.io/" target="_blank">-->
+            <!--                <img src="images/deciforce.png">-->
+            <!--            </a>-->
+            <!--        </div>-->
+            <!--        <div style="padding-top: 30pt; margin: 0 50pt;" class="title" id="lang">-->
+            <!--            Safe Driving via Expert Guided Policy Optimization-->
+            <!--        </div>-->
+
+            <table>
+                <tr>
+                    <!-- <td>
+            
+                    <div class="logo"
+                         style="
+                         width: 100pt;
+                         vertical-align: text-top;
+                         text-align: center;
+                         ">
+                        <a href="https://ai4brain.github.io/" target="_blank">
+                            <img src="images/logo.png">
+                        </a>
+                    </div>
+
+                    </td> -->
+                    <td>
+                        <div style="padding-top: 10pt;" class="title" id="lang">
+                            EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals
+                        </div>
+
+                    </td>
+                    <!-- <td>
+                        <div class="logo" style="
+                         width: 100pt;
+                         padding-top: 10pt;
+                         vertical-align: center;
+                         text-align: center;
+                         ">
+                            <a href="https://github.com/decisionforce/metadrive" target="_blank">
+                                <img style=" width: 120pt;" src="images/logo.png">
+                            </a>
+                        </div>
+
+                    </td> -->
+                </tr>
+            </table>
+
+
+        </div>
+        <!-- === Title Ends === -->
+        <div class="author">
+            <p style="text-align:center">ACM Multimedia 2023</p>
+            <a href="">Yucheng Liu</a><sup>1</sup>,&nbsp;
+            <a href="https://ziyujia.github.io/" target="_blank">Ziyu Jia</a><sup>1</sup>,&nbsp;&nbsp;
+            <a href="https://hychaowang.github.io/" target="_blank">Haichao Wang</a><sup>2</sup>,&nbsp;
+        </div>
+
+        <div class="institution" style="font-size: 11pt;">
+            <div>
+                <sup>1</sup>Institute of Automation, Chinese Academy of Sciences<br>
+                <sup>2</sup>Tsinghua-Berkeley Shenzhen Institute<br>
+
+            </div>
+        </div>
+        <table border="0" align="center">
+            <tr>
+                <td align="center" style="padding: 0pt 0 15pt 0">
+                    <a class="bar" href=" "><b>Webpage</b></a> |
+                    <a class="bar" href="https://github.com/YuchengLiu-Alex/EmotionKD"><b>Code</b></a> |
+                    <a class="bar" href=""><b>Poster</b></a> |
+                    <a class="bar" href="#video"><b>Video</b></a> |
+                    <a class="bar" href=" "><b>Paper</b></a> |
+                    <a class="bar" href=" "><b>Poster</b></a>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <!-- === Home Section Ends === -->
+
+    <!-- === Overview Section Starts === -->
+    <div class="section">
+        <div class="title" id="lang">Methods</div>
+        <div class="body">
+
+            <div class="teaser">
+                <img src="images/Pipeline.png">
+                <div class="text">
+                    <br>
+                    Fig. 1 Structure of proposed EmotionKD. The knowledge in the multi-modal model is transferred to the unimodal model through knowledge distillation. The IMF feature is obtained from the interactivity-based modal fusion module.
+                </div>
+            </div>
+
+            <div class="text">
+                <p>
+                    We design multi-modal teacher model to improve the performance of unimodal student models through knowledge distillation. Specifically, the EmotionKD framework includes a multi-modal teacher model called EmotionNet-Teacher, a unimodal student model called EmotionNet-Student, and an adaptive feedback knowledge distillation. Our contributions are as follows: <br>
+
+                    <ul>
+                         <li>We propose a novel multi-modal EmotionNet-Teacher based on a dual-stream transformer structure with an Interactivity-based Modal Fusion (IMF) module. It simultaneously extracts heterogeneity knowledge and interactivity knowledge between EEG modality and GSR modality;<br></li> 
+
+                         <li>
+                            We design an adaptive feedback mechanism for cross-modal knowledge distillation, which can help the multi-modal teacher model adaptively adjust the knowledge transfer during distillation to improve the classification performance of the unimodal student model;<br>
+                         </li>
+
+                         <li>
+                            The proposed EmotionKD method achieves the best performance on two physiological signal-based emotion recognition datasets. To the best of our knowledge, this is the first application of cross-modal knowledge distillation in the field of physiological signal-based emotion recognition to transfer fused EEG and GSR features to the unimodal GSR model.<br>
+
+                         </li>
+
+                    </ul>
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+
+<!-- === Result Section Starts === -->
+    <div class="section">
+        <div class="title" id="lang">Experiments</div>
+        <div class="body">
+
+            <div>
+
+                <div class="text">
+                    We firstly compare our EmotionNet-Student with other methods. The results show that EmotionNet-Student has a SOTA performance compared to other unimodal or knowledge transfer-based baseline methods on the emotion recognition task. It proves that our enhanced unimodal model is better than other unimodal methods.
+                    <br>
+                </div>
+                <img src="images/results/Results_UniModal.png"; text-align: center; width="950px">
+
+                <div class="text">
+                    Then, we compare our EmotionNet-Teachaer with other baselines. The results show that the proposed EmotionNet-Teacher has a significantly better performance compared to other multimodal baseline methods on the emotion recognition task. It also proves that our proposed multimodal method is effective.
+                    <br>
+                </div>
+                <img src="images/results/Results_MultiModal.png"; text-align: center; width="950px">
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+<!-- === Result Section Ends === -->
+
+<div class="section">
+    <div class="title" id="video">Talk</div>
+    <video width="900" height="506" controls>
+        <source src="videos/mmfp2527-video.mp4" type="video/mp4">
+      </video>
+</div>
+
+    <!-- === Reference Section Starts === -->
+    <div class="section">
+        <div class="bibtex">
+            <div class="text">Reference</div>
+        </div>
+        This paper has not been online yet.
+        <pre>
+
+    </pre>
+        <!-- Adjust the frame size based on the demo (Every project differs). -->
+    </div>
+
+</body>
+
+</html>
