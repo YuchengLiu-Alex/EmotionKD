@@ -54,7 +54,7 @@
                     </td> -->
                     <td>
                         <div style="padding-top: 10pt;" class="title" id="lang">
-                            EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals
+                            EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals<br><br>
                         </div>
 
                     </td>
@@ -78,7 +78,7 @@
         </div>
         <!-- === Title Ends === -->
         <div class="author">
-            <p style="text-align:center">ACM Multimedia 2023</p>
+            <p style="text-align:center">ACM Multimedia 2023<br><br></p>
             <a href="">Yucheng Liu</a><sup>1</sup>,&nbsp;
             <a href="https://ziyujia.github.io/" target="_blank">Ziyu Jia</a><sup>1</sup>,&nbsp;&nbsp;
             <a href="https://hychaowang.github.io/" target="_blank">Haichao Wang</a><sup>2</sup>,&nbsp;
@@ -88,7 +88,7 @@
             <div>
                 <sup>1</sup>Institute of Automation, Chinese Academy of Sciences<br>
                 <sup>2</sup>Tsinghua-Berkeley Shenzhen Institute<br>
-
+                <br><br>
             </div>
         </div>
         <table border="0" align="center">
@@ -99,7 +99,7 @@
                     <a class="bar" href=""><b>Poster</b></a> |
                     <a class="bar" href="#video"><b>Video</b></a> |
                     <a class="bar" href=" "><b>Paper</b></a> |
-                    <a class="bar" href=" "><b>Poster</b></a>
+                    <a class="bar" href="./Poster/poster.pdf"><b>Poster</b></a>
                 </td>
             </tr>
         </table>
@@ -109,7 +109,7 @@
 
     <!-- === Overview Section Starts === -->
     <div class="section">
-        <div class="title" id="lang">Methods</div>
+        <div class="title" id="lang">EmotionKD</div>
         <div class="body">
 
             <div class="teaser">
@@ -122,18 +122,58 @@
 
             <div class="text">
                 <p>
-                    We design multi-modal teacher model to improve the performance of unimodal student models through knowledge distillation. Specifically, the EmotionKD framework includes a multi-modal teacher model called EmotionNet-Teacher, a unimodal student model called EmotionNet-Student, and an adaptive feedback knowledge distillation. Our contributions are as follows: <br>
-
+                    We design knowledge distillation framework to improve the performance of unimodal student models through knowledge distillation. Specifically, the EmotionKD framework includes the following modules: <br>
                     <ul>
-                         <li>We propose a novel multi-modal EmotionNet-Teacher based on a dual-stream transformer structure with an Interactivity-based Modal Fusion (IMF) module. It simultaneously extracts heterogeneity knowledge and interactivity knowledge between EEG modality and GSR modality;<br></li> 
+                        <li> A multi-modal teacher model called EmotionNet-Teacher;</li> 
+
+                        <li>A unimodal student model called EmotionNet-Student;</li>
+
+                        <li>An adaptive feedback knowledge distillation.</li>
+
+                   </ul>
+                </p>
+            </div>
+
+            <div class="teaser">
+                <img src="images/Emotion-Teacher.png">
+                <div class="text">
+                    <br>
+                    Fig. 2 Structure of proposed Emotion-Teacher network. 
+                </div>
+            </div>
+
+            <div class="text">
+                <p>
+                    In the Emotion-Teacher model, the heterogeneity fram each modality is extracted by transformer encoder. As for the interactivity, it is extracted from the heterogeneity feature by the IMF module. Finally, we employ the IMF feature to obtain the higher performance.
+                </p>
+            </div>
+
+            <div class="teaser">
+                <img src="images/Feedback.png";text-align: center; width="400px";>
+                <div class="text">
+                    <br>
+                    Fig. 3 The adaptive feadback knowledge distillation method. 
+                </div>
+            </div>
+
+            <div class="text">
+                <p>
+                    Adaptive feedback knowledge distillation method is proposed in this paper so that the teacher model is able to adjust the ouput feature during the knowledge distillation. Hence, student model will have better better performacne.<br>
+                </p>
+            </div>
+
+            <div class="text">
+                <p>
+                    Our contributions are as follows: <br>
+                    <ul>
+                         <li>We propose a novel multi-modal EmotionNet-Teacher with an <b>Interactivity-based Modal Fusion (IMF) module</b>;<br></li> 
 
                          <li>
-                            We design an adaptive feedback mechanism for cross-modal knowledge distillation, which can help the multi-modal teacher model adaptively adjust the knowledge transfer during distillation to improve the classification performance of the unimodal student model;<br>
+                            We design an <b>adaptive feedback mechanism</b> for cross-modal knowledge distillation;<br>
                          </li>
 
                          <li>
-                            The proposed EmotionKD method achieves the best performance on two physiological signal-based emotion recognition datasets. To the best of our knowledge, this is the first application of cross-modal knowledge distillation in the field of physiological signal-based emotion recognition to transfer fused EEG and GSR features to the unimodal GSR model.<br>
-
+                            To the best of our knowledge, this is the <b>first application</b> of cross-modal knowledge distillation in the field of physiological signal-based emotion recognition to transfer fused EEG and GSR features to the unimodal GSR model.<br>
                          </li>
 
                     </ul>
