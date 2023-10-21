@@ -1,7 +1,7 @@
 from tensorflow import keras
 from tensorflow.keras import layers, Model
 
-from Attention import MultiDepthAttentionFusion, MultiModalAttentionFusion
+from Attention import MultiDepthFusion, MultiModalFusion
 from BasicModule import Classifier, EEG_Head, GSR_Head
 from Distill_zoo import MLKDLoss
 from Transformer_model import transformer_feature_extractor, PositionEmbedding, TransformerBlock, \
@@ -23,7 +23,7 @@ def get_GSR_model(KD_mode="MLKD", learning_rate=1e-6, e2=0.1, e3=1):
 
     # print(gsr_feature_1.shape, gsr_feature_2.shape, gsr_feature_3.shape)
 
-    att_feature = MultiDepthAttentionFusion(64, 64)([gsr_feature_1, gsr_feature_2, gsr_feature_3])
+    att_feature = MultiDepthFusion(64, 64)([gsr_feature_1, gsr_feature_2, gsr_feature_3])
 
     # print(att_feature.shape)
 
@@ -46,7 +46,7 @@ def get_GSR_model(KD_mode="MLKD", learning_rate=1e-6, e2=0.1, e3=1):
 
     custom_dir = {
         "GSR_Head": GSR_Head,
-        "MultiDepthAttentionFusion": MultiDepthAttentionFusion,
+        "MultiDepthFusion": MultiDepthFusion,
         "transformer_feature_extractor": transformer_feature_extractor,
         "Classifier": Classifier,
         "PositionEmbedding": PositionEmbedding,
@@ -90,8 +90,8 @@ def get_MultiModal_model(learning_rate=5e-5):
     # print(gsr_feature_1.shape, gsr_feature_2.shape, gsr_feature_3.shape)
     # print(eeg_feature_1.shape, eeg_feature_2.shape, eeg_feature_3.shape)
 
-    att_feature_1 = MultiModalAttentionFusion(64, 64)([eeg_feature_1, gsr_feature_1, eeg_feature_2, gsr_feature_2])
-    att_feature_2 = MultiModalAttentionFusion(64, 64)([eeg_feature_2, gsr_feature_2, eeg_feature_3, gsr_feature_3])
+    att_feature_1 = MultiModalFusion(64, 64)([eeg_feature_1, gsr_feature_1, eeg_feature_2, gsr_feature_2])
+    att_feature_2 = MultiModalFusion(64, 64)([eeg_feature_2, gsr_feature_2, eeg_feature_3, gsr_feature_3])
     att_feature = att_feature_1 + att_feature_2
 
     # att_feature = att_feature_1
@@ -111,7 +111,7 @@ def get_MultiModal_model(learning_rate=5e-5):
 
     custom_dir = {
         "GSR_Head": GSR_Head,
-        "MultiModalAttentionFusion": MultiModalAttentionFusion,
+        "MultiModalFusion": MultiModalFusion,
         "transformer_feature_extractor": transformer_feature_extractor,
         "Classifier": Classifier,
         "PositionEmbedding": PositionEmbedding,

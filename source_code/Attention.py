@@ -5,7 +5,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 
 
-class SelfAttemtionBlock(layers.Layer):
+class ScoreGenerationBlock(layers.Layer):
     def __init__(self, input_dim, output_dim):
         super().__init__()
 
@@ -42,7 +42,7 @@ class SelfAttemtionBlock(layers.Layer):
         return self.config
 
 
-class MultiModalAttentionFusion(layers.Layer):
+class MultiModalFusion(layers.Layer):
 
     def __init__(self, input_dim, output_dim):
         super().__init__()
@@ -51,8 +51,8 @@ class MultiModalAttentionFusion(layers.Layer):
         self.output_dim = output_dim
 
         self.concatenate = layers.Concatenate(axis=1)
-        self.mm_block_before = SelfAttemtionBlock(input_dim, output_dim)
-        self.mm_block_after = SelfAttemtionBlock(input_dim, output_dim)
+        self.mm_block_before = ScoreGenerationBlock(input_dim, output_dim)
+        self.mm_block_after = ScoreGenerationBlock(input_dim, output_dim)
         self.multiply = layers.Multiply()
 
     def call(self, inputs):
@@ -81,14 +81,14 @@ class MultiModalAttentionFusion(layers.Layer):
         return self.config
 
 
-class MultiDepthAttentionFusion(layers.Layer):
+class MultiDepthFusion(layers.Layer):
 
     def __init__(self, input_dim, output_dim):
         super().__init__()
         self.concatenate = layers.Concatenate()
-        self.sa_block_after = SelfAttemtionBlock(input_dim, output_dim)
-        self.sa_block_intermediate = SelfAttemtionBlock(input_dim, output_dim)
-        self.sa_block_before = SelfAttemtionBlock(input_dim, output_dim)
+        self.sa_block_after = ScoreGenerationBlock(input_dim, output_dim)
+        self.sa_block_intermediate = ScoreGenerationBlock(input_dim, output_dim)
+        self.sa_block_before = ScoreGenerationBlock(input_dim, output_dim)
         self.multiply = layers.Multiply()
 
         self.input_dim = input_dim

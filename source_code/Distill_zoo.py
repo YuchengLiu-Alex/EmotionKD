@@ -9,9 +9,9 @@ from tensorflow.keras.layers import Activation
 
 # tf.compat.v1.disable_eager_execution()
 
-class master_Loss(KL.Layer):
+class feedback_Loss(KL.Layer):
     def __init__(self, e1=1, e2=1, **kwargs):
-        super(master_Loss, self).__init__(**kwargs)
+        super(feedback_Loss, self).__init__(**kwargs)
         self.e1 = e1
         self.e2 = e2
         self.Hard = tf.keras.losses.categorical_crossentropy
@@ -33,7 +33,7 @@ class master_Loss(KL.Layer):
         S_soft_loss = K.mean(S_soft_loss)
 
         self.add_loss(true_loss, inputs=True)
-        self.add_metric(true_loss, aggregation="mean", name="Master_loss")
+        self.add_metric(true_loss, aggregation="mean", name="feedback_Loss")
 
         self.add_loss(S_soft_loss, inputs=True)
         self.add_metric(S_soft_loss, aggregation="mean", name="Student_loss")
