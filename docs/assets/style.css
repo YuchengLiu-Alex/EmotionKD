@@ -133,3 +133,7 @@ pre {
   text-align: left;
   font-size: 14pt;
 }
+
+.centered-content {
+  text-align: center;
+}
