@@ -31,7 +31,7 @@ EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognitio
 
 # Datasets
 
- We evaluate our model on the DEAP and HCI-Tagging dataset. The DEAP and HCI-Tagging are open-access database of laboratory-based physiological (PSG) recordings. Information on how to obtain it can be found in [DEAP](https://deap.readthedocs.io/en/master/) and [HCI-Tagging](https://mahnob-db.eu/hci-tagging/) specifically.
+ We evaluate our model on the DEAP and HCI-Tagging dataset. The DEAP and HCI-Tagging are open-access database of laboratory-based physiological recordings. Information on how to obtain it can be found in [DEAP](https://deap.readthedocs.io/en/master/) and [HCI-Tagging](https://mahnob-db.eu/hci-tagging/) specifically.
 
 # Requirements
 
