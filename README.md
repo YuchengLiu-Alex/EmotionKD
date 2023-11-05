@@ -1,5 +1,4 @@
 # EmotionKD
-# EmotionKD
 
 EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals
 
@@ -7,27 +6,32 @@ EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognitio
 ![model_architecture](figures/pipeline.png)
 
 
-<!-- # References
+# References
 EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals. (ACM MM 2023)
 
 ```latex
-@inproceedings{ijcai2020-184,
-  title     = {GraphSleepNet: Adaptive Spatial-Temporal Graph Convolutional Networks for Sleep Stage Classification},
-  author    = {Jia, Ziyu and Lin, Youfang and Wang, Jing and Zhou, Ronghao and Ning, Xiaojun and He, Yuanlai and Zhao, Yaoshuai},
-  booktitle = {Proceedings of the Twenty-Ninth International Joint Conference on
-               Artificial Intelligence, {IJCAI-20}},
-  publisher = {International Joint Conferences on Artificial Intelligence Organization},             
-  pages     = {1324--1330},
-  year      = {2020},
-  month     = {7},
-  doi       = {10.24963/ijcai.2020/184},
-  url       = {https://doi.org/10.24963/ijcai.2020/184},
-}
-``` -->
+            @inproceedings{10.1145/3581783.3612277,
+                author = {Liu, Yucheng and Jia, Ziyu and Wang, Haichao},
+                title = {EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals},
+                year = {2023},
+                isbn = {9798400701085},
+                publisher = {Association for Computing Machinery},
+                address = {New York, NY, USA},
+                url = {https://doi.org/10.1145/3581783.3612277},
+                doi = {10.1145/3581783.3612277},
+                abstract = {Emotion recognition using multi-modal physiological signals is an emerging field in affective computing that significantly improves performance compared to unimodal approaches. The combination of Electroencephalogram(EEG) and Galvanic Skin Response(GSR) signals are particularly effective for objective and complementary emotion recognition. However, the high cost and inconvenience of EEG signal acquisition severely hinder the popularity of multi-modal emotion recognition in real-world scenarios, while GSR signals are easier to obtain. To address this challenge, we propose EmotionKD, a framework for cross-modal knowledge distillation that simultaneously models the heterogeneity and interactivity of GSR and EEG signals under a unified framework. By using knowledge distillation, fully fused multi-modal features can be transferred to an unimodal GSR model to improve performance. Additionally, an adaptive feedback mechanism is proposed to enable the multi-modal model to dynamically adjust according to the performance of the unimodal model during knowledge distillation, which guides the unimodal model to enhance its performance in emotion recognition. Our experiment results demonstrate that the proposed model achieves state-of-the-art performance on two public datasets. Furthermore, our approach has the potential to reduce reliance on multi-modal data with lower sacrificed performance, making emotion recognition more applicable and feasible. The source code is available at https://github.com/YuchengLiu-Alex/EmotionKD},
+                booktitle = {Proceedings of the 31st ACM International Conference on Multimedia},
+                pages = {6122–6131},
+                numpages = {10},
+                keywords = {knowledge distillation, emotion recognition, galvanic skin response, affective computing, electroencephalogram},
+                location = {Ottawa ON, Canada},
+                series = {MM '23}
+                }
+```
 
 # Datasets
 
- We evaluate our model on the DEAP and HCI-Tagging dataset. The DEAP and HCI-Tagging are open-access and collaborative database of laboratory-based polysomnography (PSG) recordings. Information on how to obtain it can be found in [DEAP](https://deap.readthedocs.io/en/master/) and [HCI-Tagging](https://mahnob-db.eu/hci-tagging/) specifically.
+ We evaluate our model on the DEAP and HCI-Tagging dataset. The DEAP and HCI-Tagging are open-access database of laboratory-based physiological (PSG) recordings. Information on how to obtain it can be found in [DEAP](https://deap.readthedocs.io/en/master/) and [HCI-Tagging](https://mahnob-db.eu/hci-tagging/) specifically.
 
 # Requirements
 
@@ -37,7 +41,6 @@ EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognitio
 - scipy 1.9.3
 - scikit-learn 1.1.2
 
-# Usage
+# Webpage
 
-We provide the distillation file `Buildmodel.py`. You need to extract the intermediate features as the inputs of the SleepKD distillation layer.
-
+The webpage is shown in [Here](https://yuchengliu-alex.github.io/EmotionKD/).
