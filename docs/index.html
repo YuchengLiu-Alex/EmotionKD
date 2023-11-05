@@ -55,7 +55,7 @@
                     </td> -->
                     <td>
                         <div style="padding-top: 10pt;" class="title" id="lang">
-                            EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals<br><br>
+                            <b>EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals</b><br><br>
                         </div>
 
                     </td>
@@ -95,7 +95,7 @@
         <table border="0" align="center">
             <tr>
                 <td align="center" style="padding: 0pt 0 15pt 0">
-                    <a class="bar" href=" "><b>Webpage</b></a> |
+                    <a class="bar" href="https://yuchengliu-alex.github.io/EmotionKD/"><b>Webpage</b></a> |
                     <a class="bar" href="https://github.com/YuchengLiu-Alex/EmotionKD"><b>Code</b></a> |
                     <a class="bar" href="#video"><b>Video</b></a> |
                     <a class="bar" href="https://dl.acm.org/doi/10.1145/3581783.3612277"><b>Paper</b></a> |
@@ -109,14 +109,14 @@
 
     <!-- === Overview Section Starts === -->
     <div class="section">
-        <div class="title" id="lang">EmotionKD</div>
+        <div class="title" id="lang"><b>EmotionKD</b></div>
         <div class="body">
 
             <div class="teaser">
                 <img src="images/Pipeline.png">
                 <div class="text">
                     <br>
-                    Fig. 1 Structure of proposed EmotionKD. The knowledge in the multi-modal model is transferred to the unimodal model through knowledge distillation. The IMF feature is obtained from the interactivity-based modal fusion module.
+                    Fig. 1 Structure of proposed EmotionKD. The knowledge in the multi-modal model is transferred to the unimodal model through knowledge distillation. The IMF feature is obtained from the interactivity-based modal fusion (IMF) module.
                 </div>
             </div>
 
@@ -144,7 +144,7 @@
 
             <div class="text">
                 <p>
-                    In the Emotion-Teacher model, the heterogeneity fram each modality is extracted by transformer encoder. As for the interactivity, it is extracted from the heterogeneity feature by the IMF module. Finally, we employ the IMF feature to obtain the higher performance.
+                    In the Emotion-Teacher model, the heterogeneity from each modality is extracted by transformer encoders. As for the interactivity, it is extracted from the heterogeneity feature by the IMF module. Finally, we employ the classifier to clasify the IMF feature to obtain the higher performance.
                 </p>
             </div>
 
@@ -158,13 +158,13 @@
 
             <div class="text">
                 <p>
-                    Adaptive feedback knowledge distillation method is proposed in this paper so that the teacher model is able to adjust the ouput feature during the knowledge distillation. Hence, student model will have better better performacne.<br>
+                    Adaptive feedback knowledge distillation method is proposed in this paper so that the teacher model is able to adjust the ouput feature during the knowledge distillation. Hence, student model will have better performacne.<br>
                 </p>
             </div>
 
             <div class="text">
                 <p>
-                    Our contributions are as follows: <br>
+                    In summary, our contributions are as follows: <br>
                     <ul>
                          <li>We propose a novel multi-modal EmotionNet-Teacher with an <b>Interactivity-based Modal Fusion (IMF) module</b>;<br></li> 
 
@@ -186,7 +186,7 @@
 
 <!-- === Result Section Starts === -->
     <div class="section">
-        <div class="title" id="lang">Experiments</div>
+        <div class="title" id="lang"> <b>Experiments</b></div>
         <div class="body">
 
             <div>
@@ -223,10 +223,25 @@
         <div class="bibtex">
             <div class="text">Reference</div>
         </div>
-        This paper has not been online yet.
         <pre>
-
-    </pre>
+            @inproceedings{10.1145/3581783.3612277,
+                author = {Liu, Yucheng and Jia, Ziyu and Wang, Haichao},
+                title = {EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals},
+                year = {2023},
+                isbn = {9798400701085},
+                publisher = {Association for Computing Machinery},
+                address = {New York, NY, USA},
+                url = {https://doi.org/10.1145/3581783.3612277},
+                doi = {10.1145/3581783.3612277},
+                abstract = {Emotion recognition using multi-modal physiological signals is an emerging field in affective computing that significantly improves performance compared to unimodal approaches. The combination of Electroencephalogram(EEG) and Galvanic Skin Response(GSR) signals are particularly effective for objective and complementary emotion recognition. However, the high cost and inconvenience of EEG signal acquisition severely hinder the popularity of multi-modal emotion recognition in real-world scenarios, while GSR signals are easier to obtain. To address this challenge, we propose EmotionKD, a framework for cross-modal knowledge distillation that simultaneously models the heterogeneity and interactivity of GSR and EEG signals under a unified framework. By using knowledge distillation, fully fused multi-modal features can be transferred to an unimodal GSR model to improve performance. Additionally, an adaptive feedback mechanism is proposed to enable the multi-modal model to dynamically adjust according to the performance of the unimodal model during knowledge distillation, which guides the unimodal model to enhance its performance in emotion recognition. Our experiment results demonstrate that the proposed model achieves state-of-the-art performance on two public datasets. Furthermore, our approach has the potential to reduce reliance on multi-modal data with lower sacrificed performance, making emotion recognition more applicable and feasible. The source code is available at https://github.com/YuchengLiu-Alex/EmotionKD},
+                booktitle = {Proceedings of the 31st ACM International Conference on Multimedia},
+                pages = {6122–6131},
+                numpages = {10},
+                keywords = {knowledge distillation, emotion recognition, galvanic skin response, affective computing, electroencephalogram},
+                location = {Ottawa ON, Canada},
+                series = {MM '23}
+                }
+        </pre>
         <!-- Adjust the frame size based on the demo (Every project differs). -->
     </div>
 
