@@ -6,6 +6,22 @@ EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognitio
 ![model_architecture](figures/pipeline.png)
 
 
+# Datasets
+
+ We evaluate our model on the DEAP and HCI-Tagging dataset. The DEAP and HCI-Tagging are open-access database of laboratory-based physiological recordings. Information on how to obtain it can be found in [DEAP](https://deap.readthedocs.io/en/master/) and [HCI-Tagging](https://mahnob-db.eu/hci-tagging/) specifically.
+
+# Requirements
+
+- Python 3.8
+- Tensorflow 2.5.0
+- numpy 1.19.5
+- scipy 1.9.3
+- scikit-learn 1.1.2
+
+# Webpage
+
+The webpage is shown in [Here](https://yuchengliu-alex.github.io/EmotionKD/).
+
 # References
 EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals. (ACM MM 2023)
 
@@ -28,19 +44,3 @@ EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognitio
                 series = {MM '23}
                 }
 ```
-
-# Datasets
-
- We evaluate our model on the DEAP and HCI-Tagging dataset. The DEAP and HCI-Tagging are open-access database of laboratory-based physiological recordings. Information on how to obtain it can be found in [DEAP](https://deap.readthedocs.io/en/master/) and [HCI-Tagging](https://mahnob-db.eu/hci-tagging/) specifically.
-
-# Requirements
-
-- Python 3.8
-- Tensorflow 2.5.0
-- numpy 1.19.5
-- scipy 1.9.3
-- scikit-learn 1.1.2
-
-# Webpage
-
-The webpage is shown in [Here](https://yuchengliu-alex.github.io/EmotionKD/).
